@@ -1,9 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import * as fs from 'fs'
+import * as path from 'path'
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
+const fileArr = ref<string[]>([])
+
+// 读取文件目录
+let _fs: typeof fs = window.require('fs')
+let _path: typeof path = window.require('path')
+console.log(_path.join(__dirname,'../../'))
+const readDir =() =>{
+  _fs.readdir(_path.join(__dirname,'../../../../../../../../'),(err: NodeJS.ErrnoException | null, files: string[])=>{
+      console.log(files)
+      fileArr.value.push(...files)
+  })
+}
 </script>
 
 <template>
@@ -26,7 +39,9 @@ const count = ref(0)
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
+  <br>
+  <button @click="readDir">read current project dir files</button>
+  <p v-for="item,index in fileArr" :key="index">{{item}}</p>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.

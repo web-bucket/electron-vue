@@ -23,3 +23,5 @@ release
 *.njsproj
 *.sln
 *.sw?
+app/main.js
+app/main.js.map
