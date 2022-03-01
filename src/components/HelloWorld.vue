@@ -13,7 +13,6 @@ let _path: typeof path = window.require('path')
 console.log(_path.join(__dirname,'../../'))
 const readDir =() =>{
   _fs.readdir(_path.join(__dirname,'../../../../../../../../'),(err: NodeJS.ErrnoException | null, files: string[])=>{
-      console.log(files)
       fileArr.value.push(...files)
   })
 }
