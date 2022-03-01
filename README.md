@@ -6,6 +6,11 @@
  npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
 ```
 
+## 设置YARN/Electron国内源
+```shell
+yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
+```
+
 1.第一步
 
 ```shell
