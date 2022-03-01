@@ -1,0 +1,7 @@
+{
+    "name": "electron-vue",
+    "version": "0.0.0",
+    "main": "main.js",
+    "private": true,
+    "dependencies": {}
+}
