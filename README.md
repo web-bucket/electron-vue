@@ -1,5 +1,11 @@
 # Vue 3 + Typescript + Vite +Electron
 
+## 设置NPM/Electron国内源
+
+```shell
+ npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
+```
+
 1.第一步
 
 ```shell
